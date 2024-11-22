@@ -1,0 +1,14 @@
+Bypassing Windows Defender using obfuscation techniques in C++. The process involves:
+
+    Obfuscation of Strings:
+        Instead of hardcoding sensitive information such as function names, IP addresses, and ports, they are mapped to indices in a larger reference string. These are reconstructed dynamically during execution to prevent static analysis tools from detecting them.
+
+    Dynamic Function Loading:
+        System APIs like CreateProcess or WSAStartup are not called directly. Instead, LoadLibrary and GetProcAddress are used to load them dynamically at runtime, reducing the chances of detection by signature-based antivirus mechanisms.
+
+    Reverse Shell Creation:
+        The obfuscated IP address and port are used to configure a connection to a control server.
+        A socket is established, and input/output redirection of cmd.exe streams to the socket ensures interactive shell access.
+
+    Stealthy Payload Execution:
+        The reverse shell is executed in memory without leaving telltale signs in the binary, further avoiding detection.
